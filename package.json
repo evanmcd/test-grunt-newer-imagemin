@@ -1,0 +1,16 @@
+{
+  "name": "test-grunt-newer-imagemin",
+  "description": "Test for https://github.com/tschaub/grunt-newer/issues/9",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "0.4.1",
+    "grunt-cli": "0.1.11",
+    "grunt-contrib-imagemin": "0.3.0",
+    "grunt-newer": "0.5.4"
+  }
+}
