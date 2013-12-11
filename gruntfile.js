@@ -11,9 +11,15 @@ module.exports = function(grunt) {
   grunt.initConfig({
     copy: {
       target: {
-        files: [
-        {expand: true, cwd: 'Source/', src: ['**','.htaccess','!site/assets/sessions/sess_*','!site/assets/logs/*','!site/assets/cache/*.cache'], dest: 'Runtime/'}
-        ]
+        files: [{
+          expand: true,
+          cwd: 'Source/',
+          src: [
+            '**',
+            '!**/*.{png,jpg,gif}'
+          ],
+          dest: 'Runtime/'
+        }]
       }
     },
     imagemin: {
@@ -28,6 +34,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('test', ['copy','newer:imagemin:main']);
+  grunt.registerTask('test', ['newer:copy', 'newer:imagemin']);
   grunt.registerTask('default', 'test');
 };
